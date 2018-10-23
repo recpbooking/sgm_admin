@@ -2,16 +2,31 @@ package com.recp.recpbooking.dto;
 
 import com.recp.recpbooking.common.StatusEnum;
 
+import java.util.Date;
+
 public class ItemDto {
+    private Integer id;
     private String shortCode;
     private String name;
     private String description;
     private String imgUrl;
     private String type;
-    private Integer category;
+    private ItemCategoryDto category;
     private Double price;
     private boolean isGroup;
+    private int itemCount;
+    private int selectionCount;
+    private Date created;
+    private Date updated;
     private StatusEnum status;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getShortCode() {
         return shortCode;
@@ -53,11 +68,11 @@ public class ItemDto {
         this.type = type;
     }
 
-    public Integer getCategory() {
+    public ItemCategoryDto getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(ItemCategoryDto category) {
         this.category = category;
     }
 
@@ -75,6 +90,38 @@ public class ItemDto {
 
     public void setGroup(boolean group) {
         isGroup = group;
+    }
+
+    public int getItemCount() {
+        return itemCount;
+    }
+
+    public void setItemCount(int itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    public int getSelectionCount() {
+        return selectionCount;
+    }
+
+    public void setSelectionCount(int selectionCount) {
+        this.selectionCount = selectionCount;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
     public StatusEnum getStatus() {
