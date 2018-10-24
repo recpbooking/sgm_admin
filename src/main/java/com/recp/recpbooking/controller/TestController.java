@@ -18,4 +18,10 @@ public class TestController {
         ModelAndView modelAndView=new ModelAndView("index");
         return modelAndView;
     }
+
+    @RequestMapping("/home")
+    public ModelAndView home(){
+        ModelAndView modelAndView=new ModelAndView("home");
+        return modelAndView;
+    }
 }
