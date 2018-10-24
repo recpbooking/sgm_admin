@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gentelella Alela! | </title>
+
+  <!-- START HEADER -->
+  <!--/*/ <th:block th:include="fragments/resources :: resources"></th:block> /*/-->
+  <!-- END HEADER -->
+</head>
+
+<body class="nav-md">
+<div class="container body">
+  <div class="main_container">
+    <!-- START HEADER -->
+    <!--/*/ <th:block th:include="fragments/pageheader :: header"></th:block> /*/-->
+    <!-- END HEADER -->
+
+    <!-- page content -->
+    <div class="right_col" role="main" style="height: 600px;">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Form Elements</h3>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Short Code <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="shortCode" name="shortCode" class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Name <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="name" name="name"
+                   class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Description <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="description" name="description" class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Image Url <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="imgUrl" name="imgUrl" required="required"
+                   class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">Price <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="price" name="price" class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="itemCount">Item Count <span
+                  class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="itemCount" name="itemCount"
+                   class="form-control col-md-7 col-xs-12">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+            <button class="btn btn-primary" type="button">Cancel</button>
+            <button class="btn btn-primary" type="reset">Reset</button>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <!-- START HEADER -->
+    <!--/*/ <th:block th:include="fragments/pagefooter :: footer"></th:block> /*/-->
+    <!-- END HEADER -->
+    <!-- /footer content -->
+  </div>
+</div>
+
+<!-- START HEADER -->
+<!--/*/ <th:block th:include="fragments/resourcesfooter :: resourcesfooter"></th:block> /*/-->
+<!-- END HEADER -->
+
+
+</body>
+</html>

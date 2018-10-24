@@ -13,15 +13,15 @@ public class TestController {
         return ResponseEntity.ok("Hiiii...");
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/")
     public ModelAndView loadLogin(){
         ModelAndView modelAndView=new ModelAndView("index");
         return modelAndView;
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/item")
     public ModelAndView home(){
-        ModelAndView modelAndView=new ModelAndView("home");
+        ModelAndView modelAndView=new ModelAndView("admin/item");
         return modelAndView;
     }
 }
