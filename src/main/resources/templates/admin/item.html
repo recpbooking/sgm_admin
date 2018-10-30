@@ -11,11 +11,13 @@
     <title>Gentelella Alela! | </title>
 
     <!-- START HEADER -->
-    <!--/*/ <th:block th:include="fragments/resources :: resources"></th:block> /*/-->
+    <!--/*/ <th:block th:include="fragments/resourcesheader :: resourcesheader"></th:block> /*/-->
     <!-- END HEADER -->
 </head>
 
 <body class="nav-md">
+
+
 <div class="container body">
     <div class="main_container">
         <!-- START HEADER -->
@@ -24,79 +26,88 @@
 
         <!-- page content -->
         <div class="right_col" role="main" style="height: 600px;">
+            <!-- START HEADER -->
+            <!--/*/ <th:block th:include="fragments/pagemessage :: pagemessage"></th:block> /*/-->
+            <!-- END HEADER -->
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Form Elements</h3>
+                    <h3>Item</h3>
                 </div>
 
 
             </div>
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Short Code <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="shortCode" name="shortCode" class="form-control col-md-7 col-xs-12">
+            <form id="frmMain" name="frmMain" th:object="${itemDto}" method="post">
+                <input type="hidden" th:id="id" th:name="id" th:field="*{id}" th:if="${itemDto.id >0}">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="shortCode">Short Code <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="shortCode" name="shortCode" th:field='*{shortCode}'
+                                   class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="name" name="name" th:field='*{name}'
+                                   class="form-control col-md-7 col-xs-12">
+                        </div>
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Name <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="name" name="name"
-                               class="form-control col-md-7 col-xs-12">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Description <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="description" name="description" th:field=*{description}
+                                   class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">Price <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="price" name="price" th:field="*{price}" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">Catagory <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select id="categoryId" name="categoryId" th:field="*{category}" class="form-control">
+                                <option th:each="categ : ${categoryList}"
+                                        th:value="${categ.id}"
+                                        th:text="${categ.name}"></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Description <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="description" name="description" class="form-control col-md-7 col-xs-12">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button class="btn btn-primary" type="button">Cancel</button>
+                            <th:block th:if="${itemDto.id > 0}">
+                                <button type="submit" value="Insert" class="btn btn-success">Update</button>
+                            </th:block>
+
+                            <th:block th:if="${itemDto.id ==  0 }">
+                                <button type="submit" value="Insert" class="btn btn-success">Save</button>
+                            </th:block>
+
+                        </div>
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Image Url <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="imgUrl" name="imgUrl" required="required"
-                               class="form-control col-md-7 col-xs-12">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">Price <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="price" name="price" class="form-control col-md-7 col-xs-12">
-                    </div>
-                </div>
-                <div class="form-group col-md-12">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="itemCount">Item Count <span
-                            class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="itemCount" name="itemCount"
-                               class="form-control col-md-7 col-xs-12">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <button class="btn btn-primary" type="button">Cancel</button>
-                        <button class="btn btn-primary" type="reset">Reset</button>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
         <!-- /page content -->
 
@@ -111,6 +122,33 @@
 <!-- START HEADER -->
 <!--/*/ <th:block th:include="fragments/resourcesfooter :: resourcesfooter"></th:block> /*/-->
 <!-- END HEADER -->
+<script type="text/javascript">
+
+
+
+    $("button[type=submit]").on("click", function (e) {
+        var val = $(this).val();
+
+        $("#frmMain").submit(function (event) {
+            alert('here');
+            var action = "";
+            if (val === "Insert") {
+                action = CONTEXT_PATH + "/itemController/saveItem";
+                $("#frmMain").attr('action', action);
+
+            } else if (val === "Update") {
+                action = CONTEXT_PATH + "/user/update";
+                $("#userDTO").attr('action', action);
+            }
+
+
+        });
+
+
+    });
+
+
+</script>
 
 
 </body>

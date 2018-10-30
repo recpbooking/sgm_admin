@@ -12,7 +12,7 @@ public class ItemCategoryDto {
     private String name;
     private String description;
     private StatusEnum status;
-    private List<ItemDto> items = new ArrayList();
+
 
     public Integer getId() {
         return id;
@@ -54,11 +54,4 @@ public class ItemCategoryDto {
         this.status = status;
     }
 
-    public List<ItemDto> getItems() {
-        return items;
-    }
-
-    public void setItems(List<ItemDto> items) {
-        this.items = items;
-    }
 }

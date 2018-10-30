@@ -5,28 +5,16 @@ import com.recp.recpbooking.common.StatusEnum;
 import java.util.Date;
 
 public class ItemDto {
-    private Integer id;
     private String shortCode;
     private String name;
     private String description;
     private String imgUrl;
     private String type;
-    private ItemCategoryDto category;
+    private Integer category;
     private Double price;
     private boolean isGroup;
-    private int itemCount;
-    private int selectionCount;
-    private Date created;
-    private Date updated;
     private StatusEnum status;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private Integer id=0;
 
     public String getShortCode() {
         return shortCode;
@@ -68,11 +56,11 @@ public class ItemDto {
         this.type = type;
     }
 
-    public ItemCategoryDto getCategory() {
+    public Integer getCategory() {
         return category;
     }
 
-    public void setCategory(ItemCategoryDto category) {
+    public void setCategory(Integer category) {
         this.category = category;
     }
 
@@ -84,44 +72,12 @@ public class ItemDto {
         this.price = price;
     }
 
-    public boolean isGroup() {
+    public boolean isIsGroup() {
         return isGroup;
     }
 
-    public void setGroup(boolean group) {
-        isGroup = group;
-    }
-
-    public int getItemCount() {
-        return itemCount;
-    }
-
-    public void setItemCount(int itemCount) {
-        this.itemCount = itemCount;
-    }
-
-    public int getSelectionCount() {
-        return selectionCount;
-    }
-
-    public void setSelectionCount(int selectionCount) {
-        this.selectionCount = selectionCount;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setIsGroup(boolean isGroup) {
+        this.isGroup = isGroup;
     }
 
     public StatusEnum getStatus() {
@@ -130,5 +86,18 @@ public class ItemDto {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "InsertItemRequestDto{" + "shortCode=" + shortCode + ", name=" + name + ", description=" + description + ", imgUrl=" + imgUrl + ", type=" + type + ", category=" + category + ", price=" + price + ", isGroup=" + isGroup + ", status=" + status + '}';
     }
 }

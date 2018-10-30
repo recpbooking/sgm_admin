@@ -1,0 +1,13 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="pagemessage">
+
+        <div class="alert alert-info  alerts" th:if="${successMessage != null && successMessage != ''}">
+            <strong>Info!</strong> <label th:text="${successMessage}"></label>
+        </div>
+        <div class="alert alert-error  alerts" th:if="${errorMessage != null && errorMessage != ''}">
+            <strong>Error!</strong><label th:text="${errorMessage}"></label>
+        </div>
+
+
+    </div>
+</div>

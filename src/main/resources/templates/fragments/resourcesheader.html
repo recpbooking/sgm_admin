@@ -28,5 +28,12 @@
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" th:href="@{/build/css/custom.min.css}" rel="stylesheet">
 
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var CONTEXT_PATH = [[${@environment.getProperty('server.servlet.context-path')}]];
+        /*]]>*/
+    </script>
+
 </th:block>
 </html>
