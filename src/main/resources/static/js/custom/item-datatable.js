@@ -6,7 +6,7 @@
 // - ThemeOn.net -
 
 /*<![CDATA[*/
-var table;
+var table1;
 
 $(window).on('load', function () {
     // DATA TABLES
@@ -19,10 +19,12 @@ $(window).on('load', function () {
     $.fn.DataTable.ext.pager.numbers_length = 5;
 
 
-    table = $('#datatable').DataTable({
+    table1 = $('#datatable1').DataTable({
         "lengthMenu": [10, 50, 150, 500],
         "processing": true,
         responsive: true,
+        paging: false,
+        searching: false,
         "ajax": {
             "url": CONTEXT_PATH + "/itemController/itemlist",
             "type": "GET"
@@ -46,7 +48,7 @@ $(window).on('load', function () {
 
     });
 
-    var rowSelection = table;
+    var rowSelection = table1;
     $('#datatable tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
