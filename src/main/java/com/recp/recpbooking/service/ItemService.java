@@ -15,4 +15,6 @@ public interface ItemService {
     public List<ItemCategoryDto> getItemCategoryList();
 
     public ItemDto getItem(String shortCode);
+
+    public List<ItemDto> itemList();
 }

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- START HEADER -->
+    <!--/*/ <th:block th:include="fragments/resourcesheader :: resourcesheader"></th:block> /*/-->
+    <!-- END HEADER -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
+          th:href="@{/css/datatable/dataTables.bootstrap4.min.css}" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-md">
+
+
+<div class="container body">
+    <div class="main_container">
+        <!-- START HEADER -->
+        <!--/*/ <th:block th:include="fragments/pageheader :: header"></th:block> /*/-->
+        <!-- END HEADER -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="height: 600px;">
+            <!-- START HEADER -->
+            <!--/*/ <th:block th:include="fragments/pagemessage :: pagemessage"></th:block> /*/-->
+            <!-- END HEADER -->
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Item List</h3>
+                </div>
+
+
+            </div>
+            <form id="frmMain" name="frmMain" method="post">
+                <input type="hidden" th:id="shortCode" th:name="shortCode"/>
+                <div class="col-md-6">
+                    <button type="button" onclick="addNew()">Add new</button>
+                </div>
+
+                <table id="datatable1" data-responsive="true"
+                       class="table table-striped table-hover dt-responsive fullwidthtable">
+                    <thead>
+                    <tr>
+                        <th>Short Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+
+                    </tr>
+                    </thead>
+
+
+                </table>
+            </form>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <!-- START HEADER -->
+        <!--/*/ <th:block th:include="fragments/pagefooter :: footer"></th:block> /*/-->
+        <!-- END HEADER -->
+        <!-- /footer content -->
+    </div>
+</div>
+
+
+<!-- START HEADER -->
+<!--/*/ <th:block th:include="fragments/resourcesfooter :: resourcesfooter"></th:block> /*/-->
+<!-- END HEADER -->
+
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/datatable/jquery.dataTables.min.js}"></script>
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/datatable/dataTables.bootstrap4.min.js}"></script>
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/custom/itemgroup-datatable.js}"></script>
+<script type="text/javascript">
+
+
+    $("button[type=submit]").on("click", function (e) {
+        var val = $(this).val();
+
+        $("#frmMain").submit(function (event) {
+            alert('here');
+            var action = "";
+            if (val === "Insert") {
+                action = CONTEXT_PATH + "/itemController/saveItem";
+                $("#frmMain").attr('action', action);
+
+            } else if (val === "Update") {
+                action = CONTEXT_PATH + "/user/update";
+                $("#userDTO").attr('action', action);
+            }
+
+
+        });
+
+
+    });
+
+    function addNew() {
+        document.getElementById('frmMain').action = CONTEXT_PATH+"/itemController/addNew";
+        document.getElementById('frmMain').submit();
+    }
+
+
+</script>
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- START HEADER -->
+    <!--/*/ <th:block th:include="fragments/resourcesheader :: resourcesheader"></th:block> /*/-->
+    <!-- END HEADER -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
+          th:href="@{/css/datatable/dataTables.bootstrap4.min.css}" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-md">
+
+
+<div class="container body">
+    <div class="main_container">
+        <!-- START HEADER -->
+        <!--/*/ <th:block th:include="fragments/pageheader :: header"></th:block> /*/-->
+        <!-- END HEADER -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="height: 600px;">
+            <!-- START HEADER -->
+            <!--/*/ <th:block th:include="fragments/pagemessage :: pagemessage"></th:block> /*/-->
+            <!-- END HEADER -->
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Item List</h3>
+                </div>
+
+
+            </div>
+            <form id="frmMain" name="frmMain" method="post">
+                <input type="hidden" th:id="shortCode" th:name="shortCode"/>
+                <div class="col-md-6">
+                    <button type="button" onclick="addNew()">Add new</button>
+                </div>
+
+                <table id="datatable1" data-responsive="true"
+                       class="table table-striped table-hover dt-responsive fullwidthtable">
+                    <thead>
+                    <tr>
+                        <th>Short Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+
+                    </tr>
+                    </thead>
+
+
+                </table>
+            </form>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <!-- START HEADER -->
+        <!--/*/ <th:block th:include="fragments/pagefooter :: footer"></th:block> /*/-->
+        <!-- END HEADER -->
+        <!-- /footer content -->
+    </div>
+</div>
+
+
+<!-- START HEADER -->
+<!--/*/ <th:block th:include="fragments/resourcesfooter :: resourcesfooter"></th:block> /*/-->
+<!-- END HEADER -->
+
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/datatable/jquery.dataTables.min.js}"></script>
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/datatable/dataTables.bootstrap4.min.js}"></script>
+
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"
+        th:src="@{/js/custom/item-datatable.js}"></script>
+<script type="text/javascript">
+
+
+    $("button[type=submit]").on("click", function (e) {
+        var val = $(this).val();
+
+        $("#frmMain").submit(function (event) {
+            alert('here');
+            var action = "";
+            if (val === "Insert") {
+                action = CONTEXT_PATH + "/itemController/saveItem";
+                $("#frmMain").attr('action', action);
+
+            } else if (val === "Update") {
+                action = CONTEXT_PATH + "/user/update";
+                $("#userDTO").attr('action', action);
+            }
+
+
+        });
+
+
+    });
+
+    function addNew() {
+        document.getElementById('frmMain').action = CONTEXT_PATH+"/itemController/addNew";
+        document.getElementById('frmMain').submit();
+    }
+
+
+</script>
+
+
+</body>
+</html>

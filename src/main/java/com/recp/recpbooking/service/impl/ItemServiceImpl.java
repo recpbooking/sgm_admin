@@ -80,4 +80,20 @@ public class ItemServiceImpl extends AbstractBaseService<ItemServiceImpl> implem
         }
         return itemDto;
     }
+
+    @Override
+    public List<ItemDto> itemList() {
+        List<ItemDto> list = null;
+        DataGridDto dataGridDto=new DataGridDto();
+        try {
+            String URL = REST_BASE_URL.concat("/api/item").concat("/itemList");
+            ResponseEntity<ItemDto[]> response = restTemplate.getForEntity(URL, ItemDto[].class);
+            list = Arrays.asList(response.getBody());
+
+
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage());
+        }
+        return list;
+    }
 }
